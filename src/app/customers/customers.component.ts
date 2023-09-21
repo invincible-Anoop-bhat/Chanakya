@@ -11,5 +11,6 @@ export class CustomersComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  allCustomers = ["Mars coffee","Raghavendra store", "K.V. Enterprise","Nagesh"]
 
 }

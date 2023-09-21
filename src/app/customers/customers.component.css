@@ -1,0 +1,28 @@
+.card{
+    background-color: #f90;
+    /* border: 8px solid #7d6; */
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px #222;
+    height: 80vh;
+    width:93vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card > *{/*applies to both left view and right view*/
+    width: fit-content;
+    margin:16px;
+    min-width: 46%;
+    min-height: 92%;
+}
+.wrapper{
+    background-color: #f00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 87vh;
+    width:100vw;
+}
+.left-view{
+
+}

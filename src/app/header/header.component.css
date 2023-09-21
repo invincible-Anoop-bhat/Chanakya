@@ -14,7 +14,7 @@
 .title{
     display: flex;
     align-items: center;
-    font-size: 1.7em;
+    font-size: 2em;
     padding:10px;
     background-color: green;
 }
@@ -22,6 +22,8 @@
     cursor: default;
     width:fit-content;
     padding:10px;
+    color: white;
+    text-shadow: 3px 3px 4px #000000;
 }
 .routes{
     display:flex;
@@ -71,7 +73,6 @@
 }
 
 .container{
-    overflow: scroll;
     background-color: #fff;
     height: 100vh;
     width: 100vw;

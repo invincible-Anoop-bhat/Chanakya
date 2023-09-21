@@ -1,1 +1,18 @@
-<p>customers works!</p>
+<div class="wrapper">
+    <div class="card">
+        <div class="left-view">
+            <div>List of customers whose payment is pending</div>
+        </div>
+        <div class="right-view">
+            <div>All customers</div>
+            <table style="background-color: aqua;">
+                <thead>
+                    <th>Name</th>
+                </thead>
+                <tbody *ngFor="let customer of allCustomers">
+                    <tr>{{customer}}</tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
