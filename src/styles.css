@@ -3,6 +3,77 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: grey;
     text-decoration: none;
 }
+
+:root{
+    --table_header_text:rgb(245,222,179);
+    --table_header_bg:rgb(46, 46, 46);    
+    --table_row_bg: rgb(11, 69, 49);
+    --table_row_text:rgb(36, 255, 135);
+    --clickable_default_color: rgb(41, 134, 255);
+    --clickable_hover_color: rgb(255, 255, 255);
+    --google_icon_hover: rgb(68, 173, 37);
+    --google_icon_hover_border: rgba(193, 255, 174, 0.5);
+}
+
+/* table related css */
+.theader{
+    background-color: var(--table_header_bg);
+    color:var(--table_header_text);
+}
+.trow{
+    background-color: var(--table_row_bg);
+    color:var(--table_row_text);
+    text-align: center;
+    justify-content: center;
+    min-width: fit-content;
+}
+.trow td{
+    padding: 5px 15px;
+}
+.trow td a {
+    text-decoration: none;
+    color:var(--clickable_default_color);
+}
+.trow td a:hover {
+    color:var(--clickable_hover_color);
+}
+.theader th{
+    padding: 5px 15px;
+    cursor: default;
+}
+table{
+    align-items: center;
+    margin: 1%;
+}
+.disableicon{
+    cursor: default;
+    opacity: 50%;
+}
+.material-symbols-outlined{
+    padding:1px;
+    border: 6px solid rgba(135, 255, 99, 0);
+    border-radius: 50%;
+    font-weight: 100;
+}
+.material-symbols-outlined:hover{
+    color:var(--google_icon_hover);
+    padding:1px;
+    cursor: pointer;
+    border: 6px solid var(--google_icon_hover_border);
+}
+.disableicon:hover{
+    color: inherit;
+    cursor: default;
+    opacity: 50%;
+    border: 6px solid rgba(255,255,255, 0);
+}
+
+table .page_no_input{
+    width:80px;
+    border: 2px solid yellow;
+    background-color: var(--table_header_bg);
+    color:var(--table_header_text);
+}
+/* table related changes ends here */

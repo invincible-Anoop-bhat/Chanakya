@@ -24,5 +24,15 @@
     width:100vw;
 }
 .left-view{
-
+    border: 2px solid black;
+}
+.right-view{
+    border: 2px solid black;
+}
+.view-header{
+    font-size: medium;
+    font-weight: 700;
+    color:var(--table_header_text);
+    margin: 2%;
+    border-bottom: 2px solid #f00;
 }

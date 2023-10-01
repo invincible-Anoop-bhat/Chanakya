@@ -1,5 +1,7 @@
 .app-root-container{
     display: block;
     background-color: #1ae582;
-    font-family: monospace;
+    font-family:mooli,poppins, monospace;
+    font-weight: 300;
+    font-size: 17px;
 }

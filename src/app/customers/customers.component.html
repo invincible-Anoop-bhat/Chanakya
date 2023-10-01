@@ -1,17 +1,63 @@
 <div class="wrapper">
-    <div class="card">
+    <app-customerinfo *ngIf="showCustomerInfo" [customerId]="customerInfoInput" (toggled)="showMessage($event)" ></app-customerinfo>
+    <div class="card" *ngIf="!showCustomerInfo">
         <div class="left-view">
-            <div>List of customers whose payment is pending</div>
+            <div class="view-header">All Customers</div>
+            <table>
+                <tr class="theader">
+                    <th>Name</th>
+                    <th><img src="../../assets/GmapIcon.png" width="20px" >Location</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+                <tr class="trow" *ngFor="let customer of selectedCustomers">
+
+                    <td>{{customer.name}}</td>
+
+                    <td>
+                        <a href="{{customer.location}}" target="_blank">{{customer.address}}</a>
+                    </td>
+
+                    <td>{{customer.contact}}</td>
+                    
+                    <td>
+                        <span class="material-symbols-outlined" (click)="viewCustomerInfopage(customer.id)"> info </span>
+                        <span class="material-symbols-outlined"> edit_square </span>
+                        <span class="material-symbols-outlined disableicon"> delete </span>
+                    </td>
+                </tr>
+            </table>
+            <!-- <app-modal id="modal-1">
+                <h1>A custom modal popup</h1>
+                <p>Home page text:</p>
+                <button (click)="modalService.close();">Close</button>
+            </app-modal> -->
         </div>
         <div class="right-view">
-            <div>All customers</div>
-            <table style="background-color: aqua;">
-                <thead>
+            <div class="view-header">Transaction Pending</div>
+            <table>
+                <tr class="theader">
                     <th>Name</th>
-                </thead>
-                <tbody *ngFor="let customer of allCustomers">
-                    <tr>{{customer}}</tr>
-                </tbody>
+                    <th><img src="../../assets/GmapIcon.png" width="20px" >Location</th>
+                    <th>Contact</th>
+                    <th>Amount</th>
+                    <th>Update</th>
+                </tr>
+                <tr class="trow" *ngFor="let customer of selectedCustomers">
+
+                    <td>{{customer.name}}</td>
+
+                    <td>
+                        <a href="{{customer.location}}" target="_blank">{{customer.address}}</a>
+                    </td>
+
+                    <td>{{customer.contact}}</td>
+                    
+                    <td>
+                        1000
+                    </td>
+                    <td><span class="material-symbols-outlined"> price_change </span></td>
+                </tr>
             </table>
         </div>
     </div>
