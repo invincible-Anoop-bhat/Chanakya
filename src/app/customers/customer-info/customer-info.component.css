@@ -1,0 +1,14 @@
+#custinfo{
+    display: flex;
+    /* gap:1em; */
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+}
+#custinfo div{
+    padding:4px;
+    margin:10px 16px;
+    border:2px solid green;
+    flex-shrink: 1;
+    font-size: medium;
+    font-weight: 700;
+}

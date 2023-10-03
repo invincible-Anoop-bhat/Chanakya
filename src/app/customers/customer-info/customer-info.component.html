@@ -1,0 +1,25 @@
+<div class="modal-wrapper">
+    <div class="modal-card">
+        <div class="modal-header">
+            <span class="material-symbols-outlined" (click)="onClick()">arrow_back</span>
+            <div class="modal-heading">
+                <h3>Customer Details</h3>
+            </div>
+        </div>
+        <div class="modal-body" id="custinfo"*ngIf="finishLoading">
+            <div>Id : {{customer.id}}</div>
+            <div>Name : {{customer.name}}</div>
+            <div>Business Type: {{customer.businessType}}</div>
+            <div>Area : {{customer.area}}</div>
+            <div>Address : {{customer.address}}</div>
+            <div>Location : <a [href]="customer.location">{{customer.location}}</a></div>
+            <div>Contact : {{customer.contact}}</div>
+            <div>Alternate Contact : {{customer.altContact}}</div>
+            <div>Other Details : {{customer.otherDetails}}</div>
+        </div>
+        <div class="modal-buttons">
+            <button class="ch-btn" (click)="onClick()">close</button>
+        </div>
+        
+    </div>
+</div>

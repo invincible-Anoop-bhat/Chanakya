@@ -10,8 +10,10 @@ import { OrdersComponent } from './orders/orders.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { HomeComponent } from './home/home.component';
 import { ModalComponent } from './subcomponents/modal/modal.component';
-import { CustomerinfoComponent } from './customers/customerinfo/customerinfo.component';
-
+import { CustomerInfoComponent } from './customers/customer-info/customer-info.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CustomerCreateComponent } from './customers/customer-create/customer-create.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +24,14 @@ import { CustomerinfoComponent } from './customers/customerinfo/customerinfo.com
     AnalyticsComponent,
     HomeComponent,
     ModalComponent,
-    CustomerinfoComponent,
+    CustomerInfoComponent,
+    CustomerCreateComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

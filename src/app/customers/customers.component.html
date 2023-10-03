@@ -1,21 +1,23 @@
 <div class="wrapper">
     <app-customerinfo *ngIf="showCustomerInfo" [customerId]="customerInfoInput" (toggled)="showMessage($event)" ></app-customerinfo>
-    <div class="card" *ngIf="!showCustomerInfo">
+    <app-customer-create *ngIf="showCreateCustomer" (toggled)="showMessage($event)"></app-customer-create>
+    <div class="card" *ngIf="!(showCustomerInfo || showCreateCustomer)">
         <div class="left-view">
             <div class="view-header">All Customers</div>
+            <button class="ch-btn" (click)="showCreateCustomer=true">New Customer</button>
             <table>
                 <tr class="theader">
                     <th>Name</th>
-                    <th><img src="../../assets/GmapIcon.png" width="20px" >Location</th>
+                    <th>Location <img src="../../assets/GmapIcon.png" width="20px" ></th>
                     <th>Contact</th>
                     <th>Actions</th>
                 </tr>
-                <tr class="trow" *ngFor="let customer of selectedCustomers">
+                <tr class="trow" *ngFor="let customer of AllCustomers">
 
                     <td>{{customer.name}}</td>
 
                     <td>
-                        <a href="{{customer.location}}" target="_blank">{{customer.address}}</a>
+                        <a [href]="customer.location" target="_blank">{{customer.area}}</a>
                     </td>
 
                     <td>{{customer.contact}}</td>
@@ -38,18 +40,13 @@
             <table>
                 <tr class="theader">
                     <th>Name</th>
-                    <th><img src="../../assets/GmapIcon.png" width="20px" >Location</th>
                     <th>Contact</th>
                     <th>Amount</th>
                     <th>Update</th>
                 </tr>
-                <tr class="trow" *ngFor="let customer of selectedCustomers">
+                <tr class="trow" *ngFor="let customer of alldummyCustomers">
 
                     <td>{{customer.name}}</td>
-
-                    <td>
-                        <a href="{{customer.location}}" target="_blank">{{customer.address}}</a>
-                    </td>
 
                     <td>{{customer.contact}}</td>
                     

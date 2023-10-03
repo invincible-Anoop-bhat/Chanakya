@@ -1,4 +1,4 @@
-export class Customer {
+export class Customerdummy {
     id: string;
     name: string;
     location: string;
@@ -10,5 +10,19 @@ export class Customer {
         this.address = "Bengaluru";
         this.contact = "9686654061";
         this.id = "20";
+    }
+  }
+  export class Customer{
+    id: number;
+    name: string;
+    location: string;
+    address: string;
+    contact: string;
+    altContact: string;
+    area: string;
+    businessType: string;
+    otherDetails: string;
+
+    constructor(){
     }
   }

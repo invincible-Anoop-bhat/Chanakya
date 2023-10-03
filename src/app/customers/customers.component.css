@@ -12,11 +12,14 @@
 .card > *{/*applies to both left view and right view*/
     width: fit-content;
     margin:16px;
-    min-width: 46%;
+    min-width: 40%;
     min-height: 92%;
 }
+.card .left-view{
+    min-width: 52%;
+}
 .wrapper{
-    background-color: #f00;
+    background-color: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,0 +1,12 @@
+#custcreate{
+    display: flex;
+    flex-wrap: wrap;
+}
+#custcreate label{
+    flex-direction: row;
+    margin:10px 15px;
+    flex-shrink: 1;
+}
+#custcreate p{
+    margin:10px 15px;
+}

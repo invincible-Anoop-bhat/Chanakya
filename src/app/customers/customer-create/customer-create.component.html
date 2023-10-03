@@ -1,0 +1,49 @@
+<div class="modal-wrapper">
+    <div class="modal-card">
+        <div class="modal-header">
+            <span class="material-symbols-outlined" (click)="onClick()">arrow_back</span>
+            <div class="modal-heading">
+                <h3>Add New Customer</h3>
+            </div>
+        </div>
+        <div class="modal-body">
+            <form action="submit" [formGroup]="customerForm" id="custcreate" (ngSubmit)="onFormSubmit(customerForm)" >
+                
+                <label for="Name">Name<span style="color: red;">*</span>: 
+                <input type="text" placeholder="your name" id="Name" formControlName="Name"></label>
+
+
+                <label for="Id">Id<span style="color: red;">*</span>: 
+                <input type="text"  id="Id" formControlName="Id"></label>
+
+
+                <label for="Contact">Contact<span style="color: red;">*</span>: 
+                <input type="text"  id="Contact" formControlName="Contact"></label>
+
+                <label for="AltContact">Alternate Contact: 
+                <input type="text"id="AltContact" formControlName="AltContact"></label>
+                
+                <label for="Area">Area<span style="color: red;">*</span>: 
+                <input type="text"  id="Area" formControlName="Area"></label>
+                
+                <label for="Address">Address<span style="color: red;">*</span>: 
+                <input type="text"  id="Address" formControlName="Address"></label>
+
+                <label for="BusinessType">Business Type<span style="color: red;">*</span>: 
+                <input type="text"  id="BusinessType" formControlName="BusinessType"></label>
+
+                <label for="Location">Location<span style="color: red;">*</span>: 
+                <input type="text"  id="Location" formControlName="Location"></label>
+
+                <label for="OtherDetails">Other Details<span style="color: red;">*</span>: 
+                <input type="text"  id="OtherDetails" formControlName="OtherDetails"></label>
+
+                <p *ngIf="customerForm.invalid" style="color: red;">Please enter required fields</p>
+                <div class="modal-buttons">
+                    <button class="ch-btn" type="submit" [disabled]="customerForm.invalid">Submit</button>
+                    <button class="ch-btn" (click)="ClearFormData()">Clear</button>
+                </div>
+            </form>
+        
+    </div>
+</div>
