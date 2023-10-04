@@ -1,11 +1,13 @@
 #custcreate{
     display: flex;
     flex-wrap: wrap;
+    min-width:500px;
 }
 #custcreate label{
     flex-direction: row;
     margin:10px 15px;
     flex-shrink: 1;
+    float: right;
 }
 #custcreate p{
     margin:10px 15px;

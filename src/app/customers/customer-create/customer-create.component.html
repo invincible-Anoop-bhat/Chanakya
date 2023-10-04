@@ -9,13 +9,12 @@
         <div class="modal-body">
             <form action="submit" [formGroup]="customerForm" id="custcreate" (ngSubmit)="onFormSubmit(customerForm)" >
                 
+                <label for="Id">Id<span style="color: red;">*</span>: 
+                <input type="text" style="width: 35px;" id="Id" formControlName="Id"></label>
+
+
                 <label for="Name">Name<span style="color: red;">*</span>: 
                 <input type="text" placeholder="your name" id="Name" formControlName="Name"></label>
-
-
-                <label for="Id">Id<span style="color: red;">*</span>: 
-                <input type="text"  id="Id" formControlName="Id"></label>
-
 
                 <label for="Contact">Contact<span style="color: red;">*</span>: 
                 <input type="text"  id="Contact" formControlName="Contact"></label>
@@ -27,18 +26,20 @@
                 <input type="text"  id="Area" formControlName="Area"></label>
                 
                 <label for="Address">Address<span style="color: red;">*</span>: 
-                <input type="text"  id="Address" formControlName="Address"></label>
+                <input type="text" style="width: 250px;" id="Address" formControlName="Address"></label>
 
                 <label for="BusinessType">Business Type<span style="color: red;">*</span>: 
                 <input type="text"  id="BusinessType" formControlName="BusinessType"></label>
 
-                <label for="Location">Location<span style="color: red;">*</span>: 
+                <label for="Location">Google Map Link<span style="color: red;">*</span>: 
                 <input type="text"  id="Location" formControlName="Location"></label>
 
                 <label for="OtherDetails">Other Details<span style="color: red;">*</span>: 
                 <input type="text"  id="OtherDetails" formControlName="OtherDetails"></label>
 
-                <p *ngIf="customerForm.invalid" style="color: red;">Please enter required fields</p>
+                <div>
+                    <p *ngIf="customerForm.invalid" style="color: rgb(255, 43, 43); font-weight: 700;">Please enter required fields</p>
+                </div>
                 <div class="modal-buttons">
                     <button class="ch-btn" type="submit" [disabled]="customerForm.invalid">Submit</button>
                     <button class="ch-btn" (click)="ClearFormData()">Clear</button>
