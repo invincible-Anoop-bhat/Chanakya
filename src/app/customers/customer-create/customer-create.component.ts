@@ -12,18 +12,18 @@ export class CustomerCreateComponent implements OnInit {
 
   @Output() toggled: EventEmitter<boolean> = new EventEmitter();
   constructor(private fb: FormBuilder, private apiService: ApiService) { }
-  customerForm: FormGroup
+  customerForm !: FormGroup
   ngOnInit(): void {
     this.customerForm = this.fb.group({
       Name: ['', [Validators.required,Validators.minLength(5)]],
-      Id: ['',Validators.required],
+      Id: ['',[Validators.required,Validators.pattern('^[0-9]*')]],
       Contact: ['',Validators.required],
       Address: ['',Validators.required],
       Area: ['',Validators.required],
       AltContact: [''],
       Location: ['',Validators.required],
       BusinessType: ['',Validators.required],
-      OtherDetails: ['',Validators.required],
+      OtherDetails: [''],
     });
   }
   

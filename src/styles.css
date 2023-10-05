@@ -146,7 +146,7 @@ table .page_no_input{
 .modal-body{
     background: var(--modal-contentbg-color);
     color: aqua;
-    border-bottom: 10px;
+    /* border-bottom: 5px; */
 }
 .modal-buttons{
     width:100%;
