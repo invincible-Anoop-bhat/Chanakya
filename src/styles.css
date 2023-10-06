@@ -117,7 +117,9 @@ table .page_no_input{
 
 /* modal css */
 .modal-wrapper{
-    width:45vw;
+    /* width:45vw; */
+    min-width:45vw;
+    width:min-content;
     height:70vh;
     background-color: var(--modal-box-color);
     border-radius: 10px;
@@ -175,3 +177,25 @@ app-customer-create{
     align-items: center;
     justify-content: center;
 }
+
+/* scrollbar edit  */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #00f; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #f00; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0f0; 
+  }

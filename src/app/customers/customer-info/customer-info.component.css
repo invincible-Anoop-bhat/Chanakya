@@ -1,13 +1,23 @@
 #custinfo{
-    display: flex;
-    /* gap:1em; */
-    flex-wrap: wrap;
-    /* flex-direction: row; */
+    width: 100%;
+    padding-top: 10px;
+    display: block;
+    /* flex-wrap: wrap; */
+    overflow-x:auto;
+    
 }
 #custinfo div{
-    padding:4px;
-    margin:10px 16px;
-    border:2px solid green;
-    flex-shrink: 1;
-    font-weight: 700;
+    /* flex-direction: row; */
+    display: inline-block;
+    width:90%;
+    /* background-color: rgb(151, 103, 255); */
+    margin:1% 15px 1% 40px;
+    /* flex-shrink: 1; */
+    /* float: right; */
+}
+
+#custinfo span{
+    float:right;
+    margin-right: 50px;
+    width:50%;
 }

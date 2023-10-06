@@ -9,37 +9,25 @@ import { Customer } from '../util/customers';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  headers = new HttpHeaders;
-
+  
   baseUrl = 'http://localhost:8080';
 
   getAllCustomers(): Observable<any> {
-    this.headers.set('Content-Type', 'application/json; charset=utf-8');
-    this.headers.set('Authorization', 'Basic YW5vb3A6YTIxZ1RhNDY='); 
-
-    return this.http.get<any>(`${this.baseUrl}/getAllCustomers`,{ headers: new HttpHeaders({'Authorization': 'Basic YW5vb3A6YTIxZ1RhNDY='})});
+    
+    // let headers = new HttpHeaders();
+    // headers = headers.append('Authorization','Basic YW5vb3A6YTIxZ1RhNDY=');
+    return this.http.get<any>(`${this.baseUrl}/getAllCustomers`);//,{ headers: headers});
   }
 
 
   getCustomerById(id: number): Observable<any> {
-
-    this.headers.set('Content-Type', 'application/json; charset=utf-8');
-    this.headers.set('Authorization', 'Basic YW5vb3A6YTIxZ1RhNDY=');
-
-    return this.http.get<any>(`${this.baseUrl}/getCustomer/${id}`,{
-      headers: this.headers
-    });
+    return this.http.get<any>(`${this.baseUrl}/getCustomer/${id}`)
   }
 
 
   addNewCustomer(data: Customer): Observable<any> {
 
-    this.headers.set('Content-Type', 'application/json; charset=utf-8');
-    this.headers.set('Authorization', 'Basic YW5vb3A6YTIxZ1RhNDY=');
-
-    return this.http.post<any>(`${this.baseUrl}/addCustomer`, data,{
-      headers: this.headers
-    });
+    return this.http.post<any>(`${this.baseUrl}/addCustomer`, data);
   }
 
 }

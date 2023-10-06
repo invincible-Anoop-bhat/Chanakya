@@ -7,15 +7,15 @@
             </div>
         </div>
         <div class="modal-body" id="custinfo"*ngIf="finishLoading">
-            <div>Id : {{customer.id}}</div>
-            <div>Name : {{customer.name}}</div>
-            <div>Business Type: {{customer.businessType}}</div>
-            <div>Area : {{customer.area}}</div>
-            <div>Address : {{customer.address}}</div>
-            <div>Location : <a [href]="customer.location">{{customer.location}}</a></div>
-            <div>Contact : {{customer.contact}}</div>
-            <div>Alternate Contact : {{customer.altContact}}</div>
-            <div>Other Details : {{customer.otherDetails}}</div>
+            <div>Id : <span>{{customer.id}}</span></div>
+            <div>Name : <span>{{customer.name}}</span></div>
+            <div>Business Type: <span>{{customer.businessType}}</span></div>
+            <div>Area : <span>{{customer.area}}</span></div>
+            <div>Address : <span>{{customer.address}}</span></div>
+            <div>Location : <span><a [href]="customer.location">{{customer.location}}</a></span></div>
+            <div>Contact : <span>{{customer.contact}}</span></div>
+            <div>Alternate Contact : <span>{{customer.altContact}}</span></div>
+            <div>Other Details : <span>{{customer.otherDetails}}</span></div>
         </div>
         <div class="modal-buttons">
             <button class="ch-btn" (click)="onClick()">close</button>
