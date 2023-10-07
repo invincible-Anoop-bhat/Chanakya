@@ -3,7 +3,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { Customer } from 'src/app/util/customers';
 
 @Component({
-  selector: 'app-customerinfo',
+  selector: 'app-customer-info',
   templateUrl: './customer-info.component.html',
   styleUrls: ['./customer-info.component.css']
 })

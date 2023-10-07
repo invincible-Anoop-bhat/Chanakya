@@ -19,7 +19,8 @@ export class CustomersComponent implements OnInit {
   }
   showCustomerInfo = false;
   showCreateCustomer = false;
-  customerInfoInput = 0;
+  showEditCustomer = false;
+  customerModalInput = 0;
   alldummyCustomers = [
     new Customerdummy("Mars coffee"),
     new Customerdummy("Raghavendra store"),
@@ -36,11 +37,16 @@ export class CustomersComponent implements OnInit {
   }
   viewCustomerInfopage(name: number){
     this.showCustomerInfo = !this.showCustomerInfo;
-    this.customerInfoInput = name;
+    this.customerModalInput = name;
+  }
+  viewCustomerEditpage(name: number){
+    this.showEditCustomer = !this.showEditCustomer;
+    this.customerModalInput = name;
   }
   showMessage(value: any) {
     this.showCustomerInfo = value;
     this.showCreateCustomer = value;
+    this.showEditCustomer = value;
   }
   
 }

@@ -14,6 +14,7 @@ import { CustomerInfoComponent } from './customers/customer-info/customer-info.c
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerCreateComponent } from './customers/customer-create/customer-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ModalComponent,
     CustomerInfoComponent,
     CustomerCreateComponent,
+    CustomerEditComponent,
   ],
   imports: [
     BrowserModule,
