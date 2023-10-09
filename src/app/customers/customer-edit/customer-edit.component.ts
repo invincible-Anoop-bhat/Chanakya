@@ -50,6 +50,9 @@ export class CustomerEditComponent implements OnInit {
     console.log(form.value);
     // Call the update api of backend to edit the database
     console.log(this.customer);
+    this.apiService.updateCustomer(this.customer).subscribe((data: any) => {
+      console.log(data);
+    });
   }
 
 }

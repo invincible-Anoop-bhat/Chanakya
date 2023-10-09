@@ -30,4 +30,9 @@ export class ApiService {
     return this.http.post<any>(`${this.baseUrl}/addCustomer`, data);
   }
 
+  updateCustomer(data: Customer): Observable<any> {
+    
+    return this.http.put<any>(`${this.baseUrl}/updateCustomer`, data);
+  }
+
 }
