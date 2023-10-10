@@ -12,15 +12,20 @@ export class CustomersComponent implements OnInit {
   constructor(protected modalService: ModalService, private apiService: ApiService) { }
   AllCustomers: Customer[];
   ngOnInit() {//error handle missing
+    this.updateScreen();
+  }
+  updateScreen(){
     this.apiService.getAllCustomers().subscribe((data: Customer[]) => {
       this.AllCustomers = data;
       console.log(data);
     });
   }
+
   showCustomerInfo = false;
   showCreateCustomer = false;
   showEditCustomer = false;
   customerModalInput = 0;
+  
   alldummyCustomers = [
     new Customerdummy("Mars coffee"),
     new Customerdummy("Raghavendra store"),
@@ -43,10 +48,17 @@ export class CustomersComponent implements OnInit {
     this.showEditCustomer = !this.showEditCustomer;
     this.customerModalInput = name;
   }
+  deleteCustomer(id: number){
+    this.apiService.deleteCustomer(id).subscribe((data: string) => {
+      console.log(data);
+      this.updateScreen();
+    });
+  }
   showMessage(value: any) {
     this.showCustomerInfo = value;
     this.showCreateCustomer = value;
     this.showEditCustomer = value;
+    this.updateScreen();
   }
   
 }

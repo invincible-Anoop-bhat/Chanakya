@@ -49,6 +49,7 @@ export class CustomerCreateComponent implements OnInit {
   
       this.apiService.addNewCustomer(this.newCustomer).subscribe((data: any) => {
         console.log(data);
+        this.toggled.emit(false);
       });
     }
     this.customerForm.reset();

@@ -1,6 +1,6 @@
 <div class="wrapper">
     <app-customer-info *ngIf="showCustomerInfo" [customerId]="customerModalInput" (toggled)="showMessage($event)" ></app-customer-info>
-    <app-customer-create *ngIf="showCreateCustomer" (toggled)="showMessage($event)"></app-customer-create>
+    <app-customer-create *ngIf="showCreateCustomer" (toggled)="showMessage($event)" (toggled)="showMessage($event)"></app-customer-create>
     <app-customer-edit *ngIf="showEditCustomer" [customerId]="customerModalInput" (toggled)="showMessage($event)"></app-customer-edit>
     <div class="card" *ngIf="!(showCustomerInfo || showCreateCustomer || showEditCustomer)">
         <div class="left-view">
@@ -26,7 +26,8 @@
                     <td>
                         <span class="material-symbols-outlined" (click)="viewCustomerInfopage(customer.id)"> info </span>
                         <span class="material-symbols-outlined" (click)="viewCustomerEditpage(customer.id)"> edit_square </span>
-                        <span class="material-symbols-outlined disableicon"> delete </span>
+                        <!-- disableicon -->
+                        <span class="material-symbols-outlined" (click)="deleteCustomer(customer.id)"> delete </span>
                     </td>
                 </tr>
             </table>

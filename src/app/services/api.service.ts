@@ -35,4 +35,8 @@ export class ApiService {
     return this.http.put<any>(`${this.baseUrl}/updateCustomer`, data);
   }
 
+  deleteCustomer(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/deleteCustomer/${id}`)
+  }
+
 }
