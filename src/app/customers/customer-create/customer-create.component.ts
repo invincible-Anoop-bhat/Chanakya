@@ -15,12 +15,12 @@ export class CustomerCreateComponent implements OnInit {
   customerForm !: FormGroup
   ngOnInit(): void {
     this.customerForm = this.fb.group({
-      Name: ['', [Validators.required,Validators.minLength(5)]],
+      Name: ['', [Validators.required,Validators.minLength(5),Validators.pattern('^[A-Za-z ]*')]],
       Id: ['',[Validators.required,Validators.pattern('^[0-9]*')]],
-      Contact: ['',Validators.required],
+      Contact: ['',[Validators.required,Validators.pattern('^[0-9]*'),Validators.minLength(10)]],
       Address: ['',Validators.required],
       Area: ['',Validators.required],
-      AltContact: [''],
+      AltContact: ['',Validators.pattern('^[0-9]*')],
       Location: ['',Validators.required],
       BusinessType: ['',Validators.required],
       OtherDetails: [''],
@@ -49,6 +49,7 @@ export class CustomerCreateComponent implements OnInit {
   
       this.apiService.addNewCustomer(this.newCustomer).subscribe((data: any) => {
         console.log(data);
+        alert("Customer Created Successfully");
         this.toggled.emit(false);
       });
     }

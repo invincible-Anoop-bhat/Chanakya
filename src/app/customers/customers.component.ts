@@ -51,6 +51,7 @@ export class CustomersComponent implements OnInit {
   deleteCustomer(id: number){
     this.apiService.deleteCustomer(id).subscribe((data: string) => {
       console.log(data);
+      alert("Customer deleted successfully");
       this.updateScreen();
     });
   }

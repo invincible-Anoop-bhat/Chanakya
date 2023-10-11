@@ -5,7 +5,7 @@
             <div class="modal-heading">
                 <h3>Add New Customer</h3>
                 <div>
-                    <p *ngIf="customerForm.invalid && (customerForm.touched ||customerForm.dirty)" style="color: rgb(255, 43, 43); font-weight: 700;">Please enter required fields</p>
+                    <p [ngClass]="customerForm.invalid?'visible':'invisible'" style="color: rgb(255, 43, 43); font-weight: 700;">Please enter required fields</p>
                 </div>
             </div>
         </div>
@@ -14,7 +14,6 @@
                 
                 <label for="Id">Id<span style="color: red;">*</span>: 
                 <input type="text" id="Id" formControlName="Id"></label>
-
 
                 <label for="Name">Name<span style="color: red;">*</span>: 
                 <input type="text" id="Name" formControlName="Name"></label>
@@ -41,10 +40,9 @@
                 <input type="text"  id="OtherDetails" formControlName="OtherDetails"></label>
                 
                 <div class="modal-buttons">
-                    <button class="ch-btn" type="submit" [disabled]="customerForm.invalid">Submit</button>
-                    <button class="ch-btn" (click)="ClearFormData()">Clear</button>
+                    <button type="submit" [ngClass]="customerForm.invalid?'disabled-btn':'ch-btn'" [disabled]="customerForm.invalid">Submit</button>
+                    <button [ngClass]="!customerForm.dirty?'disabled-btn':'ch-btn'" (click)="ClearFormData()">Clear</button>
                 </div>
             </form>
-        
     </div>
 </div>

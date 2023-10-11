@@ -24,12 +24,12 @@ export class CustomerEditComponent implements OnInit {
   ngOnInit(): void {
 
     this.customerForm = this.fb.group({
-      Name: ['', [Validators.required,Validators.minLength(5)]],
+      Name: ['', [Validators.required,Validators.minLength(5),Validators.pattern('^[A-Za-z ]*')]],
       Id: ['',[Validators.required,Validators.pattern('^[0-9]*')]],
-      Contact: ['',Validators.required],
+      Contact: ['',[Validators.required,Validators.pattern('^[0-9]*'),Validators.minLength(10)]],
       Address: ['',Validators.required],
       Area: ['',Validators.required],
-      AltContact: [''],
+      AltContact: ['',Validators.pattern('^[0-9]*')],
       Location: ['',Validators.required],
       BusinessType: ['',Validators.required],
       OtherDetails: [''],
@@ -52,6 +52,8 @@ export class CustomerEditComponent implements OnInit {
     console.log(this.customer);
     this.apiService.updateCustomer(this.customer).subscribe((data: any) => {
       console.log(data);
+      alert("Customer details successfully updated")
+      this.toggled.emit(false);
     });
   }
 
