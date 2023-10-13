@@ -45,7 +45,7 @@
     font-weight: 500;
 }
 .header-item:hover{
-    background-color: yellowgreen;
+    background-color: rgb(89, 255, 216);
 }
 .floatLeft{
     float: left;
@@ -60,10 +60,17 @@
     padding:10px;
     background-color: white;
 }
+.rightHeader h4{
+    text-align: center;
+    padding-top:5px;
+    font-size: 21px;
+    font-weight: 500;
+    cursor: default;
+}
 .right-items{
     padding: 10px;
     position:fixed;
-    top:10px;
+    top:0.4%;
     right:10px;
     background-color: orangered;
 }
