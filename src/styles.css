@@ -7,28 +7,42 @@
 }
 
 :root{
-    --bg-color: rgb(255,0,0);
+    --bg-color: white;
+
+    /* header colors */    
+    --header-bg1: rgb(244, 49, 49);/*green;*/
+    --header-bg2: rgb(244, 49, 49);/*darkblue;*/
+    --header-bg3: rgb(244, 49, 49);/*rgb(15, 56, 56);*/
+    --header-active: rgb(134, 34, 141);/*purple;*/
+    --header-text: brown;/*white;*/
+    --header-hovered: rgb(255, 197, 122);/* rgb(255, 197, 122); */
+
     /* table colors */
     --table_header_text:rgb(245,222,179);
-    --table_header_bg:rgb(46, 46, 46);    
-    --table_row_bg: rgb(11, 69, 49);
-    --table_row_text:rgb(36, 255, 135);
-    --clickable_default_color: rgb(41, 134, 255);
+    --table_header_bg: rgb(184, 54, 196);/*rgb(46, 46, 46);*/    
+    --table_row_bg: rgb(255, 152, 152);/*rgb(244, 150, 255);rgb(11, 69, 49);*/
+    --table_row_text:rgb(220, 63, 63); /*rgb(36, 255, 135);*/
+    --clickable_default_color: rgb(10, 50, 103);
     --clickable_hover_color: rgb(255, 255, 255);
-    --google_icon_hover: rgb(68, 173, 37);
-    --google_icon_hover_border: rgba(193, 255, 174, 0.5);
+    --google_icon_hover: rgb(184, 54, 196);
+    --google_icon_hover_border: rgba(244, 49, 49, 0.5);
 
     /* button colors */
-    --btn-primary: rgb(224, 37, 52);
-    --btn-primary-hover: rgb(132, 13, 23);
+    --btn-primary: rgb(124, 71, 223);
+    --btn-primary-hover: rgb(244, 49, 49);
     --btn-text: rgb(255, 255, 133);
     --btn-text-hover: rgb(255,255,255);
 
     /* Background for modals */
     --modal-sidebg-color: rgb(13, 52, 35);
     --modal-box-color: rgb(255,255,133);
-    --modal-contentbg-color:rgb(17, 97, 62);
+    --modal-contentbg-color: rgb(121, 121, 121);/*rgb(17, 97, 62);*/
 }
+/* card  */
+.card{
+    background-color: rgb(255, 247, 185);/*#f90;*/
+}
+
 
 /* table related css */
 .theader{
@@ -41,6 +55,9 @@
     text-align: center;
     justify-content: center;
     min-width: fit-content;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
 }
 .trow td{
     padding: 5px 15px;

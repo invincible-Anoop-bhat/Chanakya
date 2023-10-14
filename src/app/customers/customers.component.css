@@ -1,5 +1,4 @@
 .card{
-    background-color: #f90;
     /* border: 8px solid #7d6; */
     border-radius: 8px;
     box-shadow: 3px 3px 10px #222;
@@ -33,9 +32,10 @@
     border: 2px solid black;
 }
 .view-header{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: medium;
     font-weight: 700;
-    color:var(--table_header_text);
+    color:rgb(150, 32, 150);
     margin: 2%;
     border-bottom: 2px solid #f00;
 }

@@ -1,22 +1,25 @@
 .headerdiv{
+    font-size: 16px;
     display: grid;
     grid-template-columns: 1fr 3fr 2fr;
-    background-color: rgb(15, 56, 56);
+    background-color: var(--header-bg3);
     height:80px;
     position: fixed;
     width:100%;
     margin: 0;
     padding: 0;
 }
-.headerdiv div{
-    /* border: 5px solid pink; */
-}
+
+/* .headerdiv div{
+    border: 5px solid pink;
+} */
+
 .title{
     display: flex;
     align-items: center;
     font-size: 2em;
     padding:10px;
-    background-color: green;
+    background-color: var(--header-bg1)
 }
 .title-item{
     cursor: default;
@@ -31,21 +34,32 @@
     /* justify-content: space-between; */
     vertical-align: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding:5px;
-    background-color: darkblue;
+    padding:5px 0;
+    background-color: var(--header-bg2);
 }
 .header-item{
     margin:0 10px 0 10px;
     text-align: center;
     background-color: white;
-    color:black;
+    color: var(--header-text);
     padding:10px;
     cursor: pointer;
     font-size: 1.2em;
     font-weight: 500;
 }
+@keyframes headeranime{
+
+    from {background-color: rgb(255, 255, 255);
+    color:var(--header-text);}
+
+    to {background-color: var(--header-hovered);
+        color:white}
+}
 .header-item:hover{
-    background-color: rgb(89, 255, 216);
+    animation-name: headeranime;
+    animation-duration: 0.5s;
+    color: white;
+    background-color: var(--header-hovered);
 }
 .floatLeft{
     float: left;
@@ -58,10 +72,12 @@
 }
 .rightHeader{
     padding:10px;
-    background-color: white;
+    color: white;
+    /* background-color: white; */
 }
 .rightHeader h4{
     text-align: center;
+    padding: 0 0.5w;
     padding-top:5px;
     font-size: 21px;
     font-weight: 500;
@@ -72,13 +88,15 @@
     position:fixed;
     top:0.4%;
     right:10px;
-    background-color: orangered;
+    /* background-color: orangered; */
 }
 
 .active{
-    border: 4px solid purple;
+    border-inline: 5px solid var(--header-active);
 }
-
+.active:hover{
+    background-color:var(--header-hovered);
+}
 .container{
     background-color: #fff;
     height: 100vh;
