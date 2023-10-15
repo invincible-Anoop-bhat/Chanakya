@@ -1,1 +1,33 @@
-<p>orders works!</p>
+<div class="wrapper">
+    <div class="card" *ngIf="showTable">
+        <div class="mid-view">
+            <div class="view-header">All Orders</div>
+            <button class="ch-btn" (click)="viewOrderComp=true">Add Order</button>
+            <table>
+                <tr class="theader">
+                    <th>Order ID</th>
+                    <th>Customer Id</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+                </tr>
+                <tr class="trow" *ngFor="let order of AllOrders">
+
+                    <td>{{order.orderId}}</td>
+
+                    <td>{{order.customerId}} <span class="material-symbols-outlined" (click)="viewCustomerDetailes(order.customerId)">info</span> </td>
+
+                    <td>{{order.amount}}</td>
+                    
+                    <td>
+                        <span class="material-symbols-outlined" (click)="viewOrderInfopage(order.orderId)"> info </span>
+                        <span class="material-symbols-outlined" (click)="viewOrderEditpage(order.orderId)"> edit_square </span>
+                        <!-- disableicon -->
+                        <span class="material-symbols-outlined" (click)="deleteOrder(order.orderId)"> delete </span>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
