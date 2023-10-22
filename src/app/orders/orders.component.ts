@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from '../util/orders';
+import { Order, Orderdummy } from '../util/orders';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-orders',
@@ -8,25 +9,48 @@ import { Order } from '../util/orders';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService : ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {//error handle missing
+    this.updateScreen();
   }
-  showTable: boolean = true;
+  AllOrders : Order[]
+  updateScreen(){
+    this.apiService.getAllOrders().subscribe((data: Order[]) => {
+      this.AllOrders = data;
+      console.log(data);
+    });
+  }
+  // showTable: boolean = true;
   viewOrderComp: boolean = false;
 
-  AllOrders: Order[] = [
-    new Order( 1, 2,600),
-    new Order(2,3,850),
-    new Order(2,3,1500)
+  AlldummyOrders: Orderdummy[] = [
+    new Orderdummy( 1, 2,600),
+    new Orderdummy(2,3,850),
+    new Orderdummy(2,3,1500)
 
   ];
+  showCustomerInfo = false
+  showOrderInfo = false
+  customerModalInput  = 0
+  orderModalInput = 0
 
-  viewOrderInfopage(Oid: Number){}
+  viewOrderInfopage(Oid: number){
+    this.showOrderInfo = true
+    this.orderModalInput = Oid
+  }
 
   viewOrderEditpage(Oid: Number){}
 
   deleteOrder(Oid: Number){}
 
-  viewCustomerDetailes(cid:Number){}
+  viewCustomerDetails(cid: number){
+    this.showCustomerInfo = true
+    this.customerModalInput = cid
+  }
+  showMessage(value : any){
+    this.showCustomerInfo = value
+    this.showOrderInfo = value
+    this.updateScreen()
+  }
 }

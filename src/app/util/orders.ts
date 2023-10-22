@@ -1,4 +1,4 @@
-export class Order{
+export class Orderdummy{
     orderId:Number
     customerId:Number
     amount:Number
@@ -9,3 +9,17 @@ export class Order{
       this.amount = amt;
     }
   }
+class Items{
+    ItemCode: String
+    Quantity: Number
+  }
+export class Order{
+  Id: number
+  Custid: number
+  OrderDate: String
+  OrderDetails: Items[]
+  DeliveryDate: String
+  PaymentDate: String
+  PaymentType: String
+  Completed: Boolean
+}

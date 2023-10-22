@@ -39,4 +39,11 @@ export class ApiService {
     return this.http.delete<any>(`${this.baseUrl}/deleteCustomer/${id}`)
   }
 
+  getAllOrders(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/getAllOrders`)
+  }
+
+  getOrderById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/getOrder/${id}`)
+  } 
 }

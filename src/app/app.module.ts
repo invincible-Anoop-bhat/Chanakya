@@ -10,11 +10,16 @@ import { OrdersComponent } from './orders/orders.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { HomeComponent } from './home/home.component';
 import { ModalComponent } from './subcomponents/modal/modal.component';
-import { CustomerInfoComponent } from './customers/customer-info/customer-info.component';
-import { HttpClientModule } from '@angular/common/http';
-import { CustomerCreateComponent } from './customers/customer-create/customer-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CustomerInfoComponent } from './customers/customer-info/customer-info.component';
+import { CustomerCreateComponent } from './customers/customer-create/customer-create.component';
 import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
+
+import { OrderInfoComponent } from './orders/order-info/order-info.component';
+import { OrderCreateComponent } from './orders/order-create/order-create.component';
+import { OrderEditComponent } from './orders/order-edit/order-edit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +33,9 @@ import { CustomerEditComponent } from './customers/customer-edit/customer-edit.c
     CustomerInfoComponent,
     CustomerCreateComponent,
     CustomerEditComponent,
+    OrderInfoComponent,
+    OrderCreateComponent,
+    OrderEditComponent,
   ],
   imports: [
     BrowserModule,

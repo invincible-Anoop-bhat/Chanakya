@@ -1,0 +1,47 @@
+<div class="modal-wrapper">
+    <div class="modal-card">
+        <div class="modal-header">
+            <span class="material-symbols-outlined" (click)="onClick()">arrow_back</span>
+            <div class="modal-heading">
+                <h3>Customer Details</h3>
+            </div>
+        </div>
+        <div class="modal-body">
+            <form action="submit" [formGroup]="customerForm" id="custcreate" (ngSubmit)="onFormSubmit(customerForm)" >
+                
+                <label for="Id">Id<span style="color: red;">*</span>: 
+                <input type="text" id="Id" [(ngModel)]="customer.id" formControlName="Id"></label>
+    
+    
+                <label for="Name">Name<span style="color: red;">*</span>: 
+                <input type="text" id="Name" [(ngModel)]="customer.name" formControlName="Name"></label>
+    
+                <label for="Contact">Contact<span style="color: red;">*</span>: 
+                <input type="text"  id="Contact" [(ngModel)]="customer.contact" formControlName="Contact"></label>
+    
+                <label for="AltContact">Alternate Contact: 
+                <input type="text"id="AltContact" [(ngModel)]="customer.altContact" formControlName="AltContact"></label>
+                
+                <label for="Area">Area<span style="color: red;">*</span>: 
+                <input type="text"  id="Area" [(ngModel)]="customer.area" formControlName="Area"></label>
+                
+                <label for="Address">Address<span style="color: red;">*</span>: 
+                <input type="text" id="Address" [(ngModel)]="customer.address" formControlName="Address"></label>
+    
+                <label for="BusinessType">Business Type<span style="color: red;">*</span>: 
+                <input type="text"  id="BusinessType" [(ngModel)]="customer.businessType" formControlName="BusinessType"></label>
+    
+                <label for="Location">Google Map Link<span style="color: red;">*</span>: 
+                <input type="text"  id="Location" [(ngModel)]="customer.location" formControlName="Location"></label>
+    
+                <label for="OtherDetails">Other Details: 
+                <input type="text"  id="OtherDetails" [(ngModel)]="customer.otherDetails" formControlName="OtherDetails"></label>
+                
+                <div class="modal-buttons">
+                    <button class="ch-btn" type="submit" [disabled]="customerForm.invalid">Submit</button>
+                    <button class="ch-btn" (click)="onClick()">close</button>
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="modal-wrapper">
+    <div class="modal-card">
+        <div class="modal-header">
+            <span class="material-symbols-outlined" (click)="onClick()">arrow_back</span>
+            <div class="modal-heading">
+                <h3>Order Details</h3>
+            </div>
+        </div>
+        <div class="modal-body" id="custinfo"*ngIf="finishLoading">
+            <div>Id : <span>{{order.Id}}</span></div>
+            <div>Customer : <span>{{customer.name}}</span></div>
+            <div>Order Placed on : <span>{{order.OrderDate}}</span></div>
+            <div>Order Details : <span>{{order.Id}}</span></div>
+            <div>Product delivered on : <span>{{order.DeliveryDate}}</span></div>
+            <div>Payment done on : <span>{{order.PaymentDate}}</span></div>
+            <div>Payment Type : <span>{{order.PaymentType}}</span></div>
+            <div>Order Status : <span>{{order.Completed}}</span></div>
+        </div>
+        <div class="modal-buttons">
+            <button class="ch-btn" (click)="onClick()">close</button>
+        </div>
+        
+    </div>
+</div>

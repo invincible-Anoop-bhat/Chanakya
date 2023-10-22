@@ -1,5 +1,7 @@
 <div class="wrapper">
-    <div class="card" *ngIf="showTable">
+    <app-customer-info *ngIf="showCustomerInfo" [customerId]="customerModalInput" (toggled)="showMessage($event)" ></app-customer-info>
+    <app-order-info *ngIf="showOrderInfo" [orderId]="orderModalInput" (toggled)="showMessage($event)"></app-order-info>
+    <div class="card" *ngIf="!showCustomerInfo || !showOrderInfo">
         <div class="mid-view">
             <div class="view-header">All Orders</div>
             <button class="ch-btn" (click)="viewOrderComp=true">Add Order</button>
@@ -7,22 +9,22 @@
                 <tr class="theader">
                     <th>Order ID</th>
                     <th>Customer Id</th>
-                    <th>Amount</th>
+                    <th>Ordered date</th>
                     <th>Actions</th>
                 </tr>
                 <tr class="trow" *ngFor="let order of AllOrders">
 
-                    <td>{{order.orderId}}</td>
+                    <td>{{order.Id}}</td>
 
-                    <td>{{order.customerId}} <span class="material-symbols-outlined" (click)="viewCustomerDetailes(order.customerId)">info</span> </td>
+                    <td class="Twoitemsinrow">{{order.Custid}} <span class="material-symbols-outlined" (click)="viewCustomerDetails(order.Custid)">info</span> </td>
 
-                    <td>{{order.amount}}</td>
+                    <td>{{order.OrderDate}}</td>
                     
                     <td>
-                        <span class="material-symbols-outlined" (click)="viewOrderInfopage(order.orderId)"> info </span>
-                        <span class="material-symbols-outlined" (click)="viewOrderEditpage(order.orderId)"> edit_square </span>
+                        <span class="material-symbols-outlined" (click)="viewOrderInfopage(order.Id)"> info </span>
+                        <span class="material-symbols-outlined" (click)="viewOrderEditpage(order.Id)"> edit_square </span>
                         <!-- disableicon -->
-                        <span class="material-symbols-outlined" (click)="deleteOrder(order.orderId)"> delete </span>
+                        <span class="material-symbols-outlined" (click)="deleteOrder(order.Id)"> delete </span>
                     </td>
 
                 </tr>
