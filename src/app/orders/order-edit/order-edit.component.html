@@ -3,42 +3,39 @@
         <div class="modal-header">
             <span class="material-symbols-outlined" (click)="onClick()">arrow_back</span>
             <div class="modal-heading">
-                <h3>Customer Details</h3>
+                <h3>Order Details</h3>
             </div>
         </div>
         <div class="modal-body">
-            <form action="submit" [formGroup]="customerForm" id="custcreate" (ngSubmit)="onFormSubmit(customerForm)" >
+            <form action="submit" [formGroup]="OrderForm" id="custcreate" (ngSubmit)="onFormSubmit(OrderForm)" >
                 
-                <label for="Id">Id<span style="color: red;">*</span>: 
-                <input type="text" id="Id" [(ngModel)]="customer.id" formControlName="Id"></label>
+                <label for="Id">Id: <span style="color: red;">*</span>: 
+                <input type="text" id="Id" [(ngModel)]="Order.Id" formControlName="Id"></label>
     
     
-                <label for="Name">Name<span style="color: red;">*</span>: 
-                <input type="text" id="Name" [(ngModel)]="customer.name" formControlName="Name"></label>
+                <label for="Custid">Customer Id: <span style="color: red;">*</span>: 
+                <input type="text" id="Custid" [(ngModel)]="Order.Custid" formControlName="Custid"></label>
     
-                <label for="Contact">Contact<span style="color: red;">*</span>: 
-                <input type="text"  id="Contact" [(ngModel)]="customer.contact" formControlName="Contact"></label>
+                <label for="OrderDate">Order Placed on: <span style="color: red;">*</span>: 
+                <input type="text"  id="OrderDate" [(ngModel)]="Order.OrderDate" formControlName="OrderDate"></label>
     
-                <label for="AltContact">Alternate Contact: 
-                <input type="text"id="AltContact" [(ngModel)]="customer.altContact" formControlName="AltContact"></label>
+                <label for="OrderDetails">OrderDetails: 
+                <input type="text"id="OrderDetails" [(ngModel)]="Order.Id" formControlName="OrderDetails"></label>
                 
-                <label for="Area">Area<span style="color: red;">*</span>: 
-                <input type="text"  id="Area" [(ngModel)]="customer.area" formControlName="Area"></label>
+                <label for="DeliveryDate">Delivered on:<span style="color: red;">*</span>: 
+                <input type="text"  id="DeliveryDate" [(ngModel)]="Order.DeliveryDate" formControlName="DeliveryDate"></label>
                 
-                <label for="Address">Address<span style="color: red;">*</span>: 
-                <input type="text" id="Address" [(ngModel)]="customer.address" formControlName="Address"></label>
+                <label for="PaymentDate">Payment Date: <span style="color: red;">*</span>: 
+                <input type="text" id="PaymentDate" [(ngModel)]="Order.PaymentDate" formControlName="PaymentDate"></label>
     
-                <label for="BusinessType">Business Type<span style="color: red;">*</span>: 
-                <input type="text"  id="BusinessType" [(ngModel)]="customer.businessType" formControlName="BusinessType"></label>
-    
-                <label for="Location">Google Map Link<span style="color: red;">*</span>: 
-                <input type="text"  id="Location" [(ngModel)]="customer.location" formControlName="Location"></label>
-    
-                <label for="OtherDetails">Other Details: 
-                <input type="text"  id="OtherDetails" [(ngModel)]="customer.otherDetails" formControlName="OtherDetails"></label>
+                <label for="PaymentType">Payment Type: <span style="color: red;">*</span>: 
+                <input type="text"  id="PaymentType" [(ngModel)]="Order.PaymentType" formControlName="PaymentType"></label>
+
+                <label for="Completed">Completed: 
+                <input type="text"  id="Completed" [(ngModel)]="Order.Completed" formControlName="Completed"></label>
                 
                 <div class="modal-buttons">
-                    <button class="ch-btn" type="submit" [disabled]="customerForm.invalid">Submit</button>
+                    <button class="ch-btn" type="submit" [disabled]="OrderForm.invalid">Submit</button>
                     <button class="ch-btn" (click)="onClick()">close</button>
                 </div>
             </form>

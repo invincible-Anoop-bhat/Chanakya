@@ -32,6 +32,7 @@ export class OrdersComponent implements OnInit {
   ];
   showCustomerInfo = false
   showOrderInfo = false
+  showOrderEdit = false
   customerModalInput  = 0
   orderModalInput = 0
 
@@ -40,7 +41,10 @@ export class OrdersComponent implements OnInit {
     this.orderModalInput = Oid
   }
 
-  viewOrderEditpage(Oid: Number){}
+  viewOrderEditpage(Oid: number){
+    this.showOrderEdit = true
+    this.orderModalInput = Oid
+  }
 
   deleteOrder(Oid: Number){}
 
@@ -51,6 +55,7 @@ export class OrdersComponent implements OnInit {
   showMessage(value : any){
     this.showCustomerInfo = value
     this.showOrderInfo = value
+    this.showOrderEdit = value
     this.updateScreen()
   }
 }

@@ -1,7 +1,8 @@
 <div class="wrapper">
     <app-customer-info *ngIf="showCustomerInfo" [customerId]="customerModalInput" (toggled)="showMessage($event)" ></app-customer-info>
     <app-order-info *ngIf="showOrderInfo" [orderId]="orderModalInput" (toggled)="showMessage($event)"></app-order-info>
-    <div class="card" *ngIf="!showCustomerInfo || !showOrderInfo">
+    <app-order-edit *ngIf="showOrderEdit" [orderId]="orderModalInput" (toggled)="showMessage($event)"></app-order-edit>
+    <div class="card" *ngIf="!showCustomerInfo && !showOrderInfo && !showOrderEdit">
         <div class="mid-view">
             <div class="view-header">All Orders</div>
             <button class="ch-btn" (click)="viewOrderComp=true">Add Order</button>

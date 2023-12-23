@@ -19,12 +19,20 @@ export class OrderInfoComponent implements OnInit {
   order : Order
   customer : Customer
   finishLoading: boolean = false
-
+  num : number
   ngOnInit(): void {
+    this.num=0;
     this.apiService.getOrderById(this.orderId).subscribe((data: Order) => {
       this.order = data;
       console.log(data);
-      this.finishLoading=true;
+      this.loadCustomerdata()
+    });
+  }
+  loadCustomerdata(){
+    this.apiService.getCustomerById(this.order.Custid).subscribe((data: Customer) => {
+      this.customer = data;
+      console.log(data);
+      this.finishLoading = true;
     });
   }
   onClick(){

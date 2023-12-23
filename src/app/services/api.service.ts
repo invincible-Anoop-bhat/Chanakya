@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Customer } from '../util/customers';
+import { Order } from '../util/orders';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
   
-  baseUrl = 'http://localhost:8080';
+  baseUrl = 'http://localhost:8000';
 
   getAllCustomers(): Observable<any> {
     
@@ -46,4 +47,18 @@ export class ApiService {
   getOrderById(id: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/getOrder/${id}`)
   } 
+
+  addNewOrder(data: Order): Observable<any> {
+
+    return this.http.post<any>(`${this.baseUrl}/addOrder`, data);
+  }
+
+  updateOrder(data: Order): Observable<any> {
+    
+    return this.http.put<any>(`${this.baseUrl}/updateOrder`, data);
+  }
+
+  deleteOrder(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/deleteOrder/${id}`)
+  }
 }

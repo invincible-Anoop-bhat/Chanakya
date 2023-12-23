@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-import { Customer } from 'src/app/util/customers';
+import { Order } from 'src/app/util/orders';
 import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -12,31 +12,30 @@ import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 export class OrderEditComponent implements OnInit {
   
   // on: boolean = true ;
-  @Input() customerId: number = 0;
+  @Input() orderId: number = 0;
   @Output() toggled: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private fb: FormBuilder,private apiService: ApiService) { }
-  //with the help of customer Id make a api call to fetch customer data and show it.
-  customer : Customer
-  customerForm !: FormGroup
+  //with the help of Order Id make a api call to fetch Order data and show it.
+  Order : Order
+  OrderForm !: FormGroup
   finishLoading: boolean = false
 
   ngOnInit(): void {
 
-    this.customerForm = this.fb.group({
-      Name: ['', [Validators.required,Validators.minLength(5),Validators.pattern('^[A-Za-z ]*')]],
+    this.OrderForm = this.fb.group({
       Id: ['',[Validators.required,Validators.pattern('^[0-9]*')]],
-      Contact: ['',[Validators.required,Validators.pattern('^[0-9]*'),Validators.minLength(10)]],
-      Address: ['',Validators.required],
-      Area: ['',Validators.required],
-      AltContact: ['',Validators.pattern('^[0-9]*')],
-      Location: ['',Validators.required],
-      BusinessType: ['',Validators.required],
-      OtherDetails: [''],
+      Custid: ['',[Validators.required,Validators.pattern('^[0-9]*')]],
+      OrderDate: ['',Validators.required],
+      OrderDetails: ['',Validators.required],
+      DeliveryDate: ['',Validators.required],
+      PaymentDate: ['',Validators.required],
+      PaymentType: ['',Validators.required],
+      Completed: [''],
     });
 
-    this.apiService.getCustomerById(this.customerId).subscribe((data: Customer) => {
-      this.customer = data;
+    this.apiService.getOrderById(this.orderId).subscribe((data: Order) => {
+      this.Order = data;
       console.log(data);
       this.finishLoading=true;
     });
@@ -49,10 +48,10 @@ export class OrderEditComponent implements OnInit {
   onFormSubmit( form : FormGroup){
     console.log(form.value);
     // Call the update api of backend to edit the database
-    console.log(this.customer);
-    this.apiService.updateCustomer(this.customer).subscribe((data: any) => {
+    console.log(this.Order);
+    this.apiService.updateOrder(this.Order).subscribe((data: any) => {
       console.log(data);
-      alert("Customer details successfully updated")
+      alert("Order details successfully updated")
       this.toggled.emit(false);
     });
   }
