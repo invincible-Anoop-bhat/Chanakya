@@ -4,6 +4,9 @@
             <span class="material-symbols-outlined" (click)="onClick()">arrow_back</span>
             <div class="modal-heading">
                 <h3>Order Details</h3>
+                <div>
+                    <p [ngClass]="OrderForm.invalid?'visible':'invisible'" style="color: rgb(255, 43, 43); font-weight: 700;">Please enter required fields</p>
+                </div>
             </div>
         </div>
         <div class="modal-body">
@@ -26,10 +29,10 @@
                 <input type="text"  id="DeliveryDate" [(ngModel)]="Order.DeliveryDate" formControlName="DeliveryDate"></label>
                 
                 <label for="PaymentDate">Payment Date: <span style="color: red;">*</span>: 
-                <input type="text" id="PaymentDate" [(ngModel)]="Order.PaymentDate" formControlName="PaymentDate"></label>
+                <input type="text" *ngIf="Order.Completed" id="PaymentDate" [(ngModel)]="Order.PaymentDate" formControlName="PaymentDate"></label>
     
                 <label for="PaymentType">Payment Type: <span style="color: red;">*</span>: 
-                <input type="text"  id="PaymentType" [(ngModel)]="Order.PaymentType" formControlName="PaymentType"></label>
+                <input type="text" *ngIf="Order.Completed" id="PaymentType" [(ngModel)]="Order.PaymentType" formControlName="PaymentType"></label>
 
                 <label for="Completed">Completed: 
                 <input type="text"  id="Completed" [(ngModel)]="Order.Completed" formControlName="Completed"></label>

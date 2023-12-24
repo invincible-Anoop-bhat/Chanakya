@@ -1,8 +1,11 @@
 <div class="wrapper">
+    <app-confirm *ngIf="showOrderDelete" [TextToDisplay]="'Delete selected order ?'" (confirmed)="deleteOrder($event)"></app-confirm>
     <app-customer-info *ngIf="showCustomerInfo" [customerId]="customerModalInput" (toggled)="showMessage($event)" ></app-customer-info>
     <app-order-info *ngIf="showOrderInfo" [orderId]="orderModalInput" (toggled)="showMessage($event)"></app-order-info>
     <app-order-edit *ngIf="showOrderEdit" [orderId]="orderModalInput" (toggled)="showMessage($event)"></app-order-edit>
-    <div class="card" *ngIf="!showCustomerInfo && !showOrderInfo && !showOrderEdit">
+    <app-order-create *ngIf="viewOrderComp" (toggled)="showMessage($event)"></app-order-create>
+    
+    <div class="card"  *ngIf="!showCustomerInfo && !showOrderInfo && !showOrderEdit && !showOrderDelete && !viewOrderComp">
         <div class="mid-view">
             <div class="view-header">All Orders</div>
             <button class="ch-btn" (click)="viewOrderComp=true">Add Order</button>
@@ -25,7 +28,7 @@
                         <span class="material-symbols-outlined" (click)="viewOrderInfopage(order.Id)"> info </span>
                         <span class="material-symbols-outlined" (click)="viewOrderEditpage(order.Id)"> edit_square </span>
                         <!-- disableicon -->
-                        <span class="material-symbols-outlined" (click)="deleteOrder(order.Id)"> delete </span>
+                        <span class="material-symbols-outlined" (click)="confirmOrderDelete(order.Id)"> delete </span>
                     </td>
 
                 </tr>

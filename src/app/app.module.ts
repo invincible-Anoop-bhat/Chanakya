@@ -19,6 +19,7 @@ import { CustomerEditComponent } from './customers/customer-edit/customer-edit.c
 import { OrderInfoComponent } from './orders/order-info/order-info.component';
 import { OrderCreateComponent } from './orders/order-create/order-create.component';
 import { OrderEditComponent } from './orders/order-edit/order-edit.component';
+import { ConfirmComponent } from './modal/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { OrderEditComponent } from './orders/order-edit/order-edit.component';
     OrderInfoComponent,
     OrderCreateComponent,
     OrderEditComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,

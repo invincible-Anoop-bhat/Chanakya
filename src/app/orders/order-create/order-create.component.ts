@@ -1,7 +1,7 @@
 import { Component, OnInit,Output , EventEmitter } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
-import { Customer } from 'src/app/util/customers';
+import { Order } from 'src/app/util/orders';
 
 @Component({
   selector: 'app-order-create',
@@ -12,18 +12,17 @@ export class OrderCreateComponent implements OnInit {
 
   @Output() toggled: EventEmitter<boolean> = new EventEmitter();
   constructor(private fb: FormBuilder, private apiService: ApiService) { }
-  customerForm !: FormGroup
+  orderForm !: FormGroup
   ngOnInit(): void {
-    this.customerForm = this.fb.group({
-      Name: ['', [Validators.required,Validators.minLength(5),Validators.pattern('^[A-Za-z ]*')]],
+    this.orderForm = this.fb.group({
       Id: ['',[Validators.required,Validators.pattern('^[0-9]*')]],
-      Contact: ['',[Validators.required,Validators.pattern('^[0-9]*'),Validators.minLength(10)]],
-      Address: ['',Validators.required],
-      Area: ['',Validators.required],
-      AltContact: ['',Validators.pattern('^[0-9]*')],
-      Location: ['',Validators.required],
-      BusinessType: ['',Validators.required],
-      OtherDetails: [''],
+      Custid: ['',[Validators.required,Validators.pattern('^[0-9]*')]],
+      OrderDate: ['',Validators.required],
+      OrderDetails: ['',Validators.required],
+      DeliveryDate: ['',Validators.required],
+      PaymentDate: [''],
+      PaymentType: [''],
+      Completed: ['',Validators.required],
     });
   }
   
@@ -32,32 +31,31 @@ export class OrderCreateComponent implements OnInit {
     // this.toggled.emit(this.on);
     this.toggled.emit(false);
   }
-  newCustomer: Customer;
+  newOrder: Order;
   onFormSubmit(form: FormGroup){
     if (form.valid) {
-      this.newCustomer = {
-        id: Number(form.value.Id),
-        name: form.value.Name,
-        contact: form.value.Contact,
-        address: form.value.Address,
-        altContact: form.value.Altcontact,
-        businessType: form.value.BusinessType,
-        area: form.value.Area,
-        otherDetails: form.value.OtherDetails,
-        location: form.value.Location,
+      this.newOrder = {
+        Id: Number(form.value.Id),
+        Custid: Number(form.value.Custid),
+        OrderDate: form.value.OrderDate,
+        OrderDetails: form.value.OrderDetails,
+        DeliveryDate: form.value.DeliveryDate,
+        PaymentDate: form.value.PaymentDate,
+        PaymentType: form.value.PaymentType,
+        Completed: form.value.Completed,
       };
   
-      this.apiService.addNewCustomer(this.newCustomer).subscribe((data: any) => {
+      this.apiService.addNewOrder(this.newOrder).subscribe((data: any) => {
         console.log(data);
-        alert("Customer Created Successfully");
+        alert("Order Created Successfully");
         this.toggled.emit(false);
       });
     }
-    this.customerForm.reset();
+    this.orderForm.reset();
     console.log(form.valid)
   }
   ClearFormData(){
-    this.customerForm.reset(); 
+    this.orderForm.reset(); 
   }
 
 }

@@ -40,6 +40,7 @@ export class OrderEditComponent implements OnInit {
       this.finishLoading=true;
     });
   }
+  
   onClick(){
     // this.on = !this.on;
     // this.toggled.emit(this.on);
@@ -55,5 +56,4 @@ export class OrderEditComponent implements OnInit {
       this.toggled.emit(false);
     });
   }
-
 }
