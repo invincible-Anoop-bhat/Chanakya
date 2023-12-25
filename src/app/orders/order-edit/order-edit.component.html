@@ -12,29 +12,29 @@
         <div class="modal-body">
             <form action="submit" [formGroup]="OrderForm" id="custcreate" (ngSubmit)="onFormSubmit(OrderForm)" >
                 
-                <label for="Id">Id: <span style="color: red;">*</span>: 
+                <label for="Id">Id<span style="color: red;">*</span>: 
                 <input type="text" id="Id" [(ngModel)]="Order.Id" formControlName="Id"></label>
     
     
-                <label for="Custid">Customer Id: <span style="color: red;">*</span>: 
+                <label for="Custid">Customer Id<span style="color: red;">*</span>: 
                 <input type="text" id="Custid" [(ngModel)]="Order.Custid" formControlName="Custid"></label>
     
-                <label for="OrderDate">Order Placed on: <span style="color: red;">*</span>: 
+                <label for="OrderDate">Order Placed on<span style="color: red;">*</span>: 
                 <input type="text"  id="OrderDate" [(ngModel)]="Order.OrderDate" formControlName="OrderDate"></label>
     
-                <label for="OrderDetails">OrderDetails: 
+                <label for="OrderDetails">OrderDetails
                 <input type="text"id="OrderDetails" [(ngModel)]="Order.Id" formControlName="OrderDetails"></label>
                 
-                <label for="DeliveryDate">Delivered on:<span style="color: red;">*</span>: 
+                <label for="DeliveryDate">Delivered on<span style="color: red;">*</span>: 
                 <input type="text"  id="DeliveryDate" [(ngModel)]="Order.DeliveryDate" formControlName="DeliveryDate"></label>
                 
-                <label for="PaymentDate">Payment Date: <span style="color: red;">*</span>: 
+                <label for="PaymentDate">Payment Date<span style="color: red;">*</span>: 
                 <input type="text" *ngIf="Order.Completed" id="PaymentDate" [(ngModel)]="Order.PaymentDate" formControlName="PaymentDate"></label>
     
-                <label for="PaymentType">Payment Type: <span style="color: red;">*</span>: 
+                <label for="PaymentType">Payment Type<span style="color: red;">*</span>: 
                 <input type="text" *ngIf="Order.Completed" id="PaymentType" [(ngModel)]="Order.PaymentType" formControlName="PaymentType"></label>
 
-                <label for="Completed">Completed: 
+                <label for="Completed">Completed<span style="color: red;">*</span>: 
                 <input type="text"  id="Completed" [(ngModel)]="Order.Completed" formControlName="Completed"></label>
                 
                 <div class="modal-buttons">

@@ -27,5 +27,5 @@
     border-left: 5px solid #14aa14;
 }
 .ng-invalid:not(form){
-    border-left:5px solid #aa1414;
+    border-left:5px solid rgb(233, 0, 0) /*#aa1414;*/;
 }

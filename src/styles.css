@@ -9,7 +9,7 @@
 :root{
     --bg-color: rgb(255, 255, 255);
 
-    /* header colors */    
+    /* header colors */
     --header-bg1: rgb(244, 49, 49);/*green;*/
     --header-bg2: rgb(244, 49, 49);/*darkblue;*/
     --header-bg3: rgb(244, 49, 49);/*rgb(15, 56, 56);*/
@@ -36,14 +36,13 @@
     /* Background for modals */
     --modal-sidebg-color: rgb(13, 52, 35);
     --modal-box-color: rgb(255,255,133);
-    --modal-contentbg-color: rgb(121, 121, 121);/*rgb(17, 97, 62);*/
+    --modal-contentbg-color: rgb(255, 100, 100); /*rgb(121, 121, 121);/*rgb(17, 97, 62);*/
 }
 
 /* card  */
 .card{
     background-color: rgb(255, 247, 185);/*#f90;*/
 }
-
 
 /* table related css */
 .theader{
@@ -179,7 +178,7 @@ table .page_no_input{
     margin:20px;
     background-color: blue;
     border-top-right-radius : 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .modal-header{
@@ -188,10 +187,12 @@ table .page_no_input{
     background-color: black;
     color: aliceblue;
     border-top-right-radius : 10px;
+    border-top-left-radius : 10px;
+    padding:0 20px 0 20px;
 }
 .modal-header > .modal-heading{
     display: inline-block;
-    padding:10px;
+    padding:10px 10px 10px 20px;
 }
 .modal-body{
     background: var(--modal-contentbg-color);
@@ -233,17 +234,29 @@ app-customer-create{
     height: 10px;
   }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #00f; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #f00; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #0f0; 
-  }
+/* Track */
+::-webkit-scrollbar-track {
+background: #00f; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #f00; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #0f0; 
+}
+
+/* Form related changes */
+input{
+    height:23px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'roboto';
+    color:var(--header-text);
+    font-weight: 800;
+}

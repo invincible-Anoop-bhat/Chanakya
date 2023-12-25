@@ -5,35 +5,35 @@
             <div class="modal-heading">
                 <h3>Add New Order</h3>
                 <div>
-                    <p [ngClass]="orderForm.invalid?'visible':'invisible'" style="color: rgb(255, 43, 43); font-weight: 700;">Please enter required fields</p>
+                    <p *ngIf="orderForm.invalid" [ngClass]="orderForm.invalid?'visible':'invisible'" style="color: rgb(255, 43, 43); font-weight: 700;">Please enter required fields</p>
                 </div>
             </div>
         </div>
         <div class="modal-body">
             <form action="submit" [formGroup]="orderForm" id="custcreate" (ngSubmit)="onFormSubmit(orderForm)" >
                 
-                <label for="Id">Id: <span style="color: red;">*</span>: 
+                <label for="Id">Id<span style="color: red;">*</span>: 
                 <input type="text" id="Id" formControlName="Id"></label>
 
-                <label for="Custid">Customer Id: <span style="color: red;">*</span>: 
+                <label for="Custid">Customer Id<span style="color: red;">*</span>: 
                 <input type="text" id="Custid" formControlName="Custid"></label>
 
-                <label for="OrderDate">Order Date: <span style="color: red;">*</span>: 
+                <label for="OrderDate">Order Date<span style="color: red;">*</span>: 
                 <input type="text"  id="OrderDate" formControlName="OrderDate"></label>
 
-                <label for="OrderDetails">Order Details: 
+                <label for="OrderDetails">Order Details
                 <input type="text"id="OrderDetails" formControlName="OrderDetails"></label>
                 
-                <label for="DeliveryDate">Delivery Date: <span style="color: red;">*</span>: 
+                <label for="DeliveryDate">Delivery Date<span style="color: red;">*</span>: 
                 <input type="text"  id="DeliveryDate" formControlName="DeliveryDate"></label>
                 
-                <label for="PaymentDate">Payment Date: <span style="color: red;">*</span>: 
+                <label for="PaymentDate">Payment Date<span style="color: red;">*</span>: 
                 <input type="text" id="PaymentDate" formControlName="PaymentDate"></label>
 
-                <label for="PaymentType">Payment Type: <span style="color: red;">*</span>: 
+                <label for="PaymentType">Payment Type<span style="color: red;">*</span>: 
                 <input type="text"  id="PaymentType" formControlName="PaymentType"></label>
 
-                <label for="Completed">Completed: <span style="color: red;">*</span>: 
+                <label for="Completed">Completed<span style="color: red;">*</span>: 
                 <input type="text"  id="Completed" formControlName="Completed"></label>
                 
                 <div class="modal-buttons">
